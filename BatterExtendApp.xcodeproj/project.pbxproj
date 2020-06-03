@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		694FA533248154DB00356183 /* RowDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FA532248154DB00356183 /* RowDataStruct.swift */; };
+		69F90159248556E0009F265B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F90158248556E0009F265B /* AppDelegate.swift */; };
+		69F9015C248556E0009F265B /* BatterExtendiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69F9015A248556E0009F265B /* BatterExtendiOS.xcdatamodeld */; };
+		69F9015E248556E0009F265B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9015D248556E0009F265B /* MasterViewController.swift */; };
+		69F90160248556E0009F265B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9015F248556E0009F265B /* DetailViewController.swift */; };
+		69F90163248556E0009F265B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F90161248556E0009F265B /* Main.storyboard */; };
+		69F90165248556E2009F265B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69F90164248556E2009F265B /* Assets.xcassets */; };
+		69F90168248556E2009F265B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F90166248556E2009F265B /* LaunchScreen.storyboard */; };
+		69F90173248556E2009F265B /* BatterExtendiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F90172248556E2009F265B /* BatterExtendiOSTests.swift */; };
+		69F9017E248556E2009F265B /* BatterExtendiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9017D248556E2009F265B /* BatterExtendiOSUITests.swift */; };
+		69F901D924856376009F265B /* PTUSBHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901CC24856375009F265B /* PTUSBHub.m */; };
+		69F901DA24856376009F265B /* PTUSBHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901CC24856375009F265B /* PTUSBHub.m */; };
+		69F901DB24856376009F265B /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901CD24856375009F265B /* PTProtocol.m */; };
+		69F901DC24856376009F265B /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901CD24856375009F265B /* PTProtocol.m */; };
+		69F901DD24856376009F265B /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D024856375009F265B /* PTChannel.m */; };
+		69F901DE24856376009F265B /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D024856375009F265B /* PTChannel.m */; };
+		69F901DF24856376009F265B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F901D424856375009F265B /* LICENSE.txt */; };
+		69F901E024856376009F265B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69F901D424856375009F265B /* LICENSE.txt */; };
+		69F901E324856376009F265B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D724856375009F265B /* Helper.swift */; };
+		69F901E424856376009F265B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D724856375009F265B /* Helper.swift */; };
+		69F901E524856376009F265B /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D824856376009F265B /* PTManager.swift */; };
+		69F901E624856376009F265B /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D824856376009F265B /* PTManager.swift */; };
+		69F901E924857E13009F265B /* RowDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901E824857E13009F265B /* RowDataStruct.swift */; };
 		7229348F2480BE6E00D19C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229348E2480BE6E00D19C42 /* AppDelegate.swift */; };
 		722934912480BE6E00D19C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722934902480BE6E00D19C42 /* ViewController.swift */; };
 		722934942480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 722934922480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld */; };
@@ -17,6 +40,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		69F9016F248556E2009F265B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 722934832480BE6E00D19C42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69F90155248556E0009F265B;
+			remoteInfo = BatterExtendiOS;
+		};
+		69F9017A248556E2009F265B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 722934832480BE6E00D19C42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69F90155248556E0009F265B;
+			remoteInfo = BatterExtendiOS;
+		};
 		722934A12480BE7100D19C42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 722934832480BE6E00D19C42 /* Project object */;
@@ -34,6 +71,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		694FA532248154DB00356183 /* RowDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDataStruct.swift; sourceTree = "<group>"; };
+		69F90156248556E0009F265B /* BatterExtendiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatterExtendiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F90158248556E0009F265B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69F9015B248556E0009F265B /* BatterExtendiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatterExtendiOS.xcdatamodel; sourceTree = "<group>"; };
+		69F9015D248556E0009F265B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		69F9015F248556E0009F265B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		69F90162248556E0009F265B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69F90164248556E2009F265B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69F90167248556E2009F265B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69F9016E248556E2009F265B /* BatterExtendiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatterExtendiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F90172248556E2009F265B /* BatterExtendiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterExtendiOSTests.swift; sourceTree = "<group>"; };
+		69F90174248556E2009F265B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69F90179248556E2009F265B /* BatterExtendiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatterExtendiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F9017D248556E2009F265B /* BatterExtendiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterExtendiOSUITests.swift; sourceTree = "<group>"; };
+		69F9017F248556E2009F265B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69F901CC24856375009F265B /* PTUSBHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTUSBHub.m; sourceTree = "<group>"; };
+		69F901CD24856375009F265B /* PTProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTProtocol.m; sourceTree = "<group>"; };
+		69F901CE24856375009F265B /* prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefix.pch; sourceTree = "<group>"; };
+		69F901CF24856375009F265B /* Peertalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peertalk.h; sourceTree = "<group>"; };
+		69F901D024856375009F265B /* PTChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTChannel.m; sourceTree = "<group>"; };
+		69F901D124856375009F265B /* PTPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTPrivate.h; sourceTree = "<group>"; };
+		69F901D224856375009F265B /* PTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTProtocol.h; sourceTree = "<group>"; };
+		69F901D324856375009F265B /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTUSBHub.h; sourceTree = "<group>"; };
+		69F901D424856375009F265B /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		69F901D524856375009F265B /* PTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTChannel.h; sourceTree = "<group>"; };
+		69F901D724856375009F265B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		69F901D824856376009F265B /* PTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTManager.swift; sourceTree = "<group>"; };
+		69F901E72485687B009F265B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		69F901E824857E13009F265B /* RowDataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDataStruct.swift; sourceTree = "<group>"; };
 		7229348B2480BE6E00D19C42 /* BatterExtendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatterExtendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7229348E2480BE6E00D19C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		722934902480BE6E00D19C42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +117,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		69F90153248556E0009F265B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F9016B248556E2009F265B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F90176248556E2009F265B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		722934882480BE6E00D19C42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,12 +162,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69F90157248556E0009F265B /* BatterExtendiOS */ = {
+			isa = PBXGroup;
+			children = (
+				69F901E824857E13009F265B /* RowDataStruct.swift */,
+				69F90158248556E0009F265B /* AppDelegate.swift */,
+				69F9015D248556E0009F265B /* MasterViewController.swift */,
+				69F9015F248556E0009F265B /* DetailViewController.swift */,
+				69F90161248556E0009F265B /* Main.storyboard */,
+				69F90164248556E2009F265B /* Assets.xcassets */,
+				69F90166248556E2009F265B /* LaunchScreen.storyboard */,
+				69F9015A248556E0009F265B /* BatterExtendiOS.xcdatamodeld */,
+			);
+			path = BatterExtendiOS;
+			sourceTree = "<group>";
+		};
+		69F90171248556E2009F265B /* BatterExtendiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				69F90172248556E2009F265B /* BatterExtendiOSTests.swift */,
+				69F90174248556E2009F265B /* Info.plist */,
+			);
+			path = BatterExtendiOSTests;
+			sourceTree = "<group>";
+		};
+		69F9017C248556E2009F265B /* BatterExtendiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				69F9017D248556E2009F265B /* BatterExtendiOSUITests.swift */,
+				69F9017F248556E2009F265B /* Info.plist */,
+			);
+			path = BatterExtendiOSUITests;
+			sourceTree = "<group>";
+		};
+		69F901CB24856375009F265B /* peertalk */ = {
+			isa = PBXGroup;
+			children = (
+				69F901CC24856375009F265B /* PTUSBHub.m */,
+				69F901CD24856375009F265B /* PTProtocol.m */,
+				69F901CE24856375009F265B /* prefix.pch */,
+				69F901CF24856375009F265B /* Peertalk.h */,
+				69F901D024856375009F265B /* PTChannel.m */,
+				69F901D124856375009F265B /* PTPrivate.h */,
+				69F901D224856375009F265B /* PTProtocol.h */,
+				69F901D324856375009F265B /* PTUSBHub.h */,
+				69F901D424856375009F265B /* LICENSE.txt */,
+				69F901D524856375009F265B /* PTChannel.h */,
+			);
+			path = peertalk;
+			sourceTree = "<group>";
+		};
 		722934822480BE6E00D19C42 = {
 			isa = PBXGroup;
 			children = (
+				69F901E72485687B009F265B /* Header.h */,
+				69F901D724856375009F265B /* Helper.swift */,
+				69F901D824856376009F265B /* PTManager.swift */,
+				69F901CB24856375009F265B /* peertalk */,
 				7229348D2480BE6E00D19C42 /* BatterExtendApp */,
 				722934A32480BE7200D19C42 /* BatterExtendAppTests */,
 				722934AE2480BE7200D19C42 /* BatterExtendAppUITests */,
+				69F90157248556E0009F265B /* BatterExtendiOS */,
+				69F90171248556E2009F265B /* BatterExtendiOSTests */,
+				69F9017C248556E2009F265B /* BatterExtendiOSUITests */,
 				7229348C2480BE6E00D19C42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +235,9 @@
 				7229348B2480BE6E00D19C42 /* BatterExtendApp.app */,
 				722934A02480BE7100D19C42 /* BatterExtendAppTests.xctest */,
 				722934AB2480BE7200D19C42 /* BatterExtendAppUITests.xctest */,
+				69F90156248556E0009F265B /* BatterExtendiOS.app */,
+				69F9016E248556E2009F265B /* BatterExtendiOSTests.xctest */,
+				69F90179248556E2009F265B /* BatterExtendiOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +252,7 @@
 				7229349A2480BE7100D19C42 /* Info.plist */,
 				7229349B2480BE7100D19C42 /* BatterExtendApp.entitlements */,
 				722934922480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld */,
+				694FA532248154DB00356183 /* RowDataStruct.swift */,
 			);
 			path = BatterExtendApp;
 			sourceTree = "<group>";
@@ -130,6 +278,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		69F90155248556E0009F265B /* BatterExtendiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F90180248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOS" */;
+			buildPhases = (
+				69F90152248556E0009F265B /* Sources */,
+				69F90153248556E0009F265B /* Frameworks */,
+				69F90154248556E0009F265B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatterExtendiOS;
+			productName = BatterExtendiOS;
+			productReference = 69F90156248556E0009F265B /* BatterExtendiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69F9016D248556E2009F265B /* BatterExtendiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F90183248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOSTests" */;
+			buildPhases = (
+				69F9016A248556E2009F265B /* Sources */,
+				69F9016B248556E2009F265B /* Frameworks */,
+				69F9016C248556E2009F265B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69F90170248556E2009F265B /* PBXTargetDependency */,
+			);
+			name = BatterExtendiOSTests;
+			productName = BatterExtendiOSTests;
+			productReference = 69F9016E248556E2009F265B /* BatterExtendiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		69F90178248556E2009F265B /* BatterExtendiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F90186248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOSUITests" */;
+			buildPhases = (
+				69F90175248556E2009F265B /* Sources */,
+				69F90176248556E2009F265B /* Frameworks */,
+				69F90177248556E2009F265B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69F9017B248556E2009F265B /* PBXTargetDependency */,
+			);
+			name = BatterExtendiOSUITests;
+			productName = BatterExtendiOSUITests;
+			productReference = 69F90179248556E2009F265B /* BatterExtendiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7229348A2480BE6E00D19C42 /* BatterExtendApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 722934B42480BE7200D19C42 /* Build configuration list for PBXNativeTarget "BatterExtendApp" */;
@@ -189,12 +390,31 @@
 		722934832480BE6E00D19C42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "xiaoke yang";
 				TargetAttributes = {
+					69F90155248556E0009F265B = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					69F9016D248556E2009F265B = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 69F90155248556E0009F265B;
+					};
+					69F90178248556E2009F265B = {
+						CreatedOnToolsVersion = 10.2;
+						TestTargetID = 69F90155248556E0009F265B;
+					};
 					7229348A2480BE6E00D19C42 = {
 						CreatedOnToolsVersion = 11.4.1;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					7229349F2480BE7100D19C42 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -222,15 +442,44 @@
 				7229348A2480BE6E00D19C42 /* BatterExtendApp */,
 				7229349F2480BE7100D19C42 /* BatterExtendAppTests */,
 				722934AA2480BE7200D19C42 /* BatterExtendAppUITests */,
+				69F90155248556E0009F265B /* BatterExtendiOS */,
+				69F9016D248556E2009F265B /* BatterExtendiOSTests */,
+				69F90178248556E2009F265B /* BatterExtendiOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		69F90154248556E0009F265B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F901E024856376009F265B /* LICENSE.txt in Resources */,
+				69F90168248556E2009F265B /* LaunchScreen.storyboard in Resources */,
+				69F90165248556E2009F265B /* Assets.xcassets in Resources */,
+				69F90163248556E0009F265B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F9016C248556E2009F265B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F90177248556E2009F265B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		722934892480BE6E00D19C42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F901DF24856376009F265B /* LICENSE.txt in Resources */,
 				722934962480BE7100D19C42 /* Assets.xcassets in Resources */,
 				722934992480BE7100D19C42 /* Main.storyboard in Resources */,
 			);
@@ -253,13 +502,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		69F90152248556E0009F265B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F90159248556E0009F265B /* AppDelegate.swift in Sources */,
+				69F9015C248556E0009F265B /* BatterExtendiOS.xcdatamodeld in Sources */,
+				69F901DE24856376009F265B /* PTChannel.m in Sources */,
+				69F9015E248556E0009F265B /* MasterViewController.swift in Sources */,
+				69F901E624856376009F265B /* PTManager.swift in Sources */,
+				69F901DA24856376009F265B /* PTUSBHub.m in Sources */,
+				69F90160248556E0009F265B /* DetailViewController.swift in Sources */,
+				69F901E924857E13009F265B /* RowDataStruct.swift in Sources */,
+				69F901DC24856376009F265B /* PTProtocol.m in Sources */,
+				69F901E424856376009F265B /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F9016A248556E2009F265B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F90173248556E2009F265B /* BatterExtendiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F90175248556E2009F265B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F9017E248556E2009F265B /* BatterExtendiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		722934872480BE6E00D19C42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				722934942480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld in Sources */,
+				694FA533248154DB00356183 /* RowDataStruct.swift in Sources */,
+				69F901DD24856376009F265B /* PTChannel.m in Sources */,
 				722934912480BE6E00D19C42 /* ViewController.swift in Sources */,
+				69F901E524856376009F265B /* PTManager.swift in Sources */,
+				69F901D924856376009F265B /* PTUSBHub.m in Sources */,
 				7229348F2480BE6E00D19C42 /* AppDelegate.swift in Sources */,
+				69F901DB24856376009F265B /* PTProtocol.m in Sources */,
+				69F901E324856376009F265B /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +570,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		69F90170248556E2009F265B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69F90155248556E0009F265B /* BatterExtendiOS */;
+			targetProxy = 69F9016F248556E2009F265B /* PBXContainerItemProxy */;
+		};
+		69F9017B248556E2009F265B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69F90155248556E0009F265B /* BatterExtendiOS */;
+			targetProxy = 69F9017A248556E2009F265B /* PBXContainerItemProxy */;
+		};
 		722934A22480BE7100D19C42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7229348A2480BE6E00D19C42 /* BatterExtendApp */;
@@ -295,6 +593,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		69F90161248556E0009F265B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69F90162248556E0009F265B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69F90166248556E2009F265B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69F90167248556E2009F265B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		722934972480BE7100D19C42 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,6 +620,145 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		69F90181248556E2009F265B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VSK9ASU9K;
+				INFOPLIST_FILE = BatterExtendiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zigbang.BatterExtendiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69F90182248556E2009F265B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VSK9ASU9K;
+				INFOPLIST_FILE = BatterExtendiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zigbang.BatterExtendiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69F90184248556E2009F265B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H73NS746L6;
+				INFOPLIST_FILE = BatterExtendiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tricubics.BatterExtendiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatterExtendiOS.app/BatterExtendiOS";
+			};
+			name = Debug;
+		};
+		69F90185248556E2009F265B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H73NS746L6;
+				INFOPLIST_FILE = BatterExtendiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tricubics.BatterExtendiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatterExtendiOS.app/BatterExtendiOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69F90187248556E2009F265B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H73NS746L6;
+				INFOPLIST_FILE = BatterExtendiOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tricubics.BatterExtendiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BatterExtendiOS;
+			};
+			name = Debug;
+		};
+		69F90188248556E2009F265B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H73NS746L6;
+				INFOPLIST_FILE = BatterExtendiOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tricubics.BatterExtendiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BatterExtendiOS;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		722934B22480BE7200D19C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -362,6 +815,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -415,6 +869,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -423,18 +878,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BatterExtendApp/BatterExtendApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7VSK9ASU9K;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatterExtendApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = xiaokeyang.BatterExtendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -443,18 +899,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BatterExtendApp/BatterExtendApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7VSK9ASU9K;
-				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BatterExtendApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = xiaokeyang.BatterExtendApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -546,6 +1003,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		69F90180248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F90181248556E2009F265B /* Debug */,
+				69F90182248556E2009F265B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69F90183248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F90184248556E2009F265B /* Debug */,
+				69F90185248556E2009F265B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69F90186248556E2009F265B /* Build configuration list for PBXNativeTarget "BatterExtendiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F90187248556E2009F265B /* Debug */,
+				69F90188248556E2009F265B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		722934862480BE6E00D19C42 /* Build configuration list for PBXProject "BatterExtendApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -585,6 +1069,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		69F9015A248556E0009F265B /* BatterExtendiOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				69F9015B248556E0009F265B /* BatterExtendiOS.xcdatamodel */,
+			);
+			currentVersion = 69F9015B248556E0009F265B /* BatterExtendiOS.xcdatamodel */;
+			path = BatterExtendiOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		722934922480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
