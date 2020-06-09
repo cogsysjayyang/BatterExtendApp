@@ -10,9 +10,11 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var mainTableview: NSTableView!
+    @IBOutlet weak var subTableview: NSTableView!
     @IBOutlet weak var addNewAppActionSets: NSButton!
     var runningAppList:NSMutableArray!
     var existingAppAction:NSMutableArray!
+    var detailExistingAppAction:NSMutableArray!
     
     // MARK: - Properties
     let ptManager = PTManager.instance
@@ -27,6 +29,9 @@ class ViewController: NSViewController {
         reloadData()
         mainTableview.delegate = self
         mainTableview.dataSource = self
+        
+        subTableview.delegate = self
+        subTableview.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -47,8 +52,22 @@ class ViewController: NSViewController {
         newItemsMeum.popUp(positioning: nil, at:addNewAppActionSets.frame.origin, in: self.view)
         
     }
-    @IBAction func reloadList(_ sender: Any) {
+    @IBAction func deleteItemFromList(_ sender: Any) {
+        let indexOfDelete = mainTableview.selectedRow
+        let objectShouldDelete:rowDataStruct = existingAppAction.object(at: indexOfDelete) as! rowDataStruct
+        
+        mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
+        CoreDataManager.shared.deleteAutoActionList(appName: objectShouldDelete.appName) { (onSuccess) in
+            print("deleted = \(onSuccess)")
+        }
+        
+        existingAppAction.removeObject(at: indexOfDelete)
         mainTableview.reloadData()
+    }
+    @IBAction func addNewAction(_ sender: Any) {
+        
+    }
+    @IBAction func removeSeletctedAction(_ sender: Any) {
     }
     func reloadDataCheckRunning(){
         runningAppList = NSMutableArray.init()
@@ -60,6 +79,21 @@ class ViewController: NSViewController {
     }
     func reloadData() -> Void {
         existingAppAction = NSMutableArray.init()
+        detailExistingAppAction = NSMutableArray.init()
+        let autoActionList: [AutoActionList] = CoreDataManager.shared.getAutoActionList()
+        let appNames : [String] = autoActionList.map({$0.appName!})
+        //let appIcons : [Data] = autoActionList.map({$0.appIcon!})
+        
+        for appName in appNames {
+            let appIcon : Data? = autoActionList.filter({$0.appName == appName}).first?.appIcon
+            //existingAppAction.add(rowDataStruct.init(appName: appName, icon: NSImage.init(data: appIcons[appNames.firstIndex(of: appName)!])!))
+            existingAppAction.add(rowDataStruct.init(appName: appName, icon: NSImage.init(data: appIcon!)!))
+        }
+        
+        
+        
+        
+        
     }
 //    func addNewAppItem(title:rowDataStruct) -> Void {
 //        existingAppAction.add(title)
@@ -75,7 +109,11 @@ class ViewController: NSViewController {
 //        }
         
         existingAppAction.add(rowDataStruct.init(appName: sender.title, icon: sender.image!))
-        mainTableview.reloadData()
+        //mainTableview.reloadData()
+        
+        mainTableview.beginUpdates()
+        mainTableview.insertRows(at: IndexSet(integer: existingAppAction.count-1), withAnimation: .effectFade)
+        mainTableview.endUpdates()
         
         if ptManager.isConnected {
             let ds = rowDataStruct.init(appName: sender.title, icon: sender.image!)
@@ -83,32 +121,76 @@ class ViewController: NSViewController {
 
         }
         
+        
+        //add to coreData
+        CoreDataManager.shared.saveAutoActionList(actionName: "still notSure", appName: sender.title, appIcon: (sender.image?.tiffRepresentation)!, scriptPath: "still notSure") { (onSuccess) in
+            print("saved = \(onSuccess)")
+        }
+        //end add to coreData
+        
     }
 
 }
 extension ViewController: NSTableViewDataSource, NSTableViewDelegate{
-    func numberOfRows(in mainTableview:NSTableView) -> Int {
-        return existingAppAction.count
+    func numberOfRows(in tableview:NSTableView) -> Int {
+        if tableview.isEqual(mainTableview) {
+            return existingAppAction.count
+        }
+        if tableview.isEqual(subTableview) {
+            return detailExistingAppAction.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
        
         //let asset = runningAppList[row] as? NSImage
-        if (tableColumn?.identifier)!.rawValue == "appName" {
-            let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "appImage")
-            let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as! NSTableCellView
-            let item = existingAppAction[row] as! rowDataStruct
-            cellView.imageView?.image=item.icon
-            cellView.textField?.stringValue=item.appName
-            return cellView
-            
+        if tableView.isEqual(mainTableview) {
+            if (tableColumn?.identifier)!.rawValue == "appName" {
+                tableColumn?.title = "Apps"
+                let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "appImage")
+                let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as! NSTableCellView
+                let item = existingAppAction[row] as! rowDataStruct
+                cellView.imageView?.image=item.icon
+                cellView.textField?.stringValue=item.appName
+                return cellView
+                
+            }
         }
-//        else if (tableColumn?.identifier)!.rawValue == "appSize"{
-//            cellView.textField!.stringValue = "size"
-//        }
+        if tableView.isEqual(subTableview) {
+            if (tableColumn?.identifier)!.rawValue == "appAction"{
+
+                tableColumn?.title = "appActions"
+            
+
+                let cellIdentifier = NSUserInterfaceItemIdentifier(rawValue: "actions")
+
+                let cellView = tableView.makeView(withIdentifier: cellIdentifier, owner: self) as! NSTableCellView
+
+                cellView.textField?.stringValue = detailExistingAppAction[row] as! String
+
+                return cellView
+
+            }
+        }
         
         return nil
     }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        detailExistingAppAction = NSMutableArray.init()
+        let indexOfSelected = mainTableview.selectedRow
+        let objectSelected:rowDataStruct = existingAppAction.object(at: indexOfSelected) as! rowDataStruct
+
+        let autoActionList: [AutoActionList] = CoreDataManager.shared.getAutoActionList()
+
+        let appStuffs : [AutoActionList] = autoActionList.filter({$0.appName == objectSelected.appName})
+        for stuff in appStuffs {
+            detailExistingAppAction.add(stuff.actionName!)
+        }
+        subTableview.reloadData()
+    }
+    
 }
 extension ViewController: PTManagerDelegate {
     

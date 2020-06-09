@@ -30,6 +30,7 @@
 		69F901E524856376009F265B /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D824856376009F265B /* PTManager.swift */; };
 		69F901E624856376009F265B /* PTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901D824856376009F265B /* PTManager.swift */; };
 		69F901E924857E13009F265B /* RowDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F901E824857E13009F265B /* RowDataStruct.swift */; };
+		720D99242488F38400D87015 /* coreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720D99232488F38400D87015 /* coreDataManager.swift */; };
 		7229348F2480BE6E00D19C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229348E2480BE6E00D19C42 /* AppDelegate.swift */; };
 		722934912480BE6E00D19C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722934902480BE6E00D19C42 /* ViewController.swift */; };
 		722934942480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 722934922480BE6E00D19C42 /* BatterExtendApp.xcdatamodeld */; };
@@ -100,6 +101,7 @@
 		69F901D824856376009F265B /* PTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTManager.swift; sourceTree = "<group>"; };
 		69F901E72485687B009F265B /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		69F901E824857E13009F265B /* RowDataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDataStruct.swift; sourceTree = "<group>"; };
+		720D99232488F38400D87015 /* coreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataManager.swift; sourceTree = "<group>"; };
 		7229348B2480BE6E00D19C42 /* BatterExtendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatterExtendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7229348E2480BE6E00D19C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		722934902480BE6E00D19C42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			path = peertalk;
 			sourceTree = "<group>";
 		};
+		720D99222488F33F00D87015 /* coreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				720D99232488F38400D87015 /* coreDataManager.swift */,
+			);
+			path = coreDataManager;
+			sourceTree = "<group>";
+		};
 		722934822480BE6E00D19C42 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +255,7 @@
 		7229348D2480BE6E00D19C42 /* BatterExtendApp */ = {
 			isa = PBXGroup;
 			children = (
+				720D99222488F33F00D87015 /* coreDataManager */,
 				7229348E2480BE6E00D19C42 /* AppDelegate.swift */,
 				722934902480BE6E00D19C42 /* ViewController.swift */,
 				722934952480BE7100D19C42 /* Assets.xcassets */,
@@ -545,6 +556,7 @@
 				722934912480BE6E00D19C42 /* ViewController.swift in Sources */,
 				69F901E524856376009F265B /* PTManager.swift in Sources */,
 				69F901D924856376009F265B /* PTUSBHub.m in Sources */,
+				720D99242488F38400D87015 /* coreDataManager.swift in Sources */,
 				7229348F2480BE6E00D19C42 /* AppDelegate.swift in Sources */,
 				69F901DB24856376009F265B /* PTProtocol.m in Sources */,
 				69F901E324856376009F265B /* Helper.swift in Sources */,
