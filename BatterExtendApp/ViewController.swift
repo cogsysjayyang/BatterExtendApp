@@ -34,6 +34,7 @@ class ViewController: NSViewController {
         
         subTableview.delegate = self
         subTableview.dataSource = self
+        subTableview.allowsTypeSelect = true
         // Do any additional setup after loading the view.
     }
 
@@ -58,19 +59,26 @@ class ViewController: NSViewController {
         let indexOfDelete = mainTableview.selectedRow
         let objectShouldDelete:rowDataStruct = (existingAppAction[indexOfDelete] as! NSArray)[0] as! rowDataStruct
         
-        mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
         CoreDataManager.shared.deleteAutoActionList(appName: objectShouldDelete.appName) { (onSuccess) in
             print("deleted = \(onSuccess)")
         }
         
         existingAppAction.removeObject(at: indexOfDelete)
         existingApps.removeObject(at: indexOfDelete)
-        mainTableview.reloadData()
+        mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
+        //mainTableview.reloadData()
     }
     @IBAction func addNewAction(_ sender: Any) {
-        
+        let item = (existingAppAction[mainTableview.selectedRow] as! NSArray)[0] as! rowDataStruct
+        addnewActionForApp(AppName:item.appName, Appicon: item.icon, isOnlyAction: true)
+        subTableview.reloadData()
     }
     @IBAction func removeSeletctedAction(_ sender: Any) {
+        
+        
+        
+        
+        
     }
     func reloadDataCheckRunning(){
         runningAppList = NSMutableArray.init()
@@ -127,19 +135,23 @@ class ViewController: NSViewController {
 //                index = runningAppList.index(of: title)
 //            }
 //        }
+        addnewActionForApp(AppName: sender.title, Appicon: sender.image!, isOnlyAction: false)
+    }
+    
+    func addnewActionForApp(AppName:String, Appicon:NSImage, isOnlyAction:Bool) -> Void {
         let newAppActionAlert = NSAlert.init()
         newAppActionAlert.alertStyle = NSAlert.Style.warning
         
         let actionName:String
         let actionScriptPath:String
         
-        if !existingApps.contains(sender.title){
+        if !existingApps.contains(AppName)||isOnlyAction{
             let inputedActionName = NSTextField.init(frame: NSRect.init(x: 0, y: 0, width: 100, height: 30))
             newAppActionAlert.messageText = "Enter new Action Name"
             newAppActionAlert.accessoryView = inputedActionName
             newAppActionAlert.addButton(withTitle: "Continue")
             newAppActionAlert.addButton(withTitle: "Cancel")
-            newAppActionAlert.icon = sender.image
+            newAppActionAlert.icon = Appicon
             let response = newAppActionAlert.runModal()
             
             if response == NSApplication.ModalResponse.alertFirstButtonReturn {
@@ -150,30 +162,32 @@ class ViewController: NSViewController {
                 
                 if scriptResult.rawValue == NSFileHandlingPanelOKButton {
                     actionScriptPath = selectScriptPanel.url!.path as String
-                    existingApps.add(sender.title)
-                    //print(actionScriptPath)
-                    detailExistingAppAction = NSMutableArray.init()
-                    detailExistingAppAction.add(NSArray.init(objects: actionName, actionScriptPath))
-                    existingAppAction.add(NSArray.init(objects: rowDataStruct.init(appName: sender.title, icon: sender.image!), detailExistingAppAction!))
                     
-                    
-                    
-                    mainTableview.beginUpdates()
-                    mainTableview.insertRows(at: IndexSet(integer: existingAppAction.count-1), withAnimation: .effectFade)
-                    mainTableview.endUpdates()
-                    
-                    mainTableview.selectRowIndexes(IndexSet(integer: existingAppAction.count-1), byExtendingSelection: false)
-                    
+                    if !isOnlyAction{
+                        existingApps.add(AppName)
+                        //print(actionScriptPath)
+                        detailExistingAppAction = NSMutableArray.init()
+                        detailExistingAppAction.add(NSArray.init(objects: actionName, actionScriptPath))
+                        existingAppAction.add(NSArray.init(objects: rowDataStruct.init(appName: AppName, icon: Appicon), detailExistingAppAction!))
+                        
+                        mainTableview.beginUpdates()
+                        mainTableview.insertRows(at: IndexSet(integer: existingAppAction.count-1), withAnimation: .effectFade)
+                        mainTableview.endUpdates()
+                        
+                        mainTableview.selectRowIndexes(IndexSet(integer: existingAppAction.count-1), byExtendingSelection: false)
+                    }else{
+                        ((existingAppAction[mainTableview.selectedRow] as! NSArray)[1] as! NSMutableArray).add(NSArray.init(objects: actionName, actionScriptPath))
+                    }
                     
                     if ptManager.isConnected {
-                        let ds = rowDataStruct.init(appName: sender.title, icon: sender.image!)
+                        let ds = rowDataStruct.init(appName: AppName, icon: Appicon)
                         ptManager.sendData(data: ds.encode(), type: PTType.rowDataStruct.rawValue)
-
+                        
                     }
-
-
+                    
+                    
                     //add to coreData
-                    CoreDataManager.shared.saveAutoActionList(actionName: actionName, appName: sender.title, appIcon: (sender.image?.tiffRepresentation)!, scriptPath: actionScriptPath) { (onSuccess) in
+                    CoreDataManager.shared.saveAutoActionList(actionName: actionName, appName: AppName, appIcon: (Appicon.tiffRepresentation)!, scriptPath: actionScriptPath) { (onSuccess) in
                         print("saved = \(onSuccess)")
                     }
                     //end add to coreData
@@ -182,8 +196,6 @@ class ViewController: NSViewController {
             }
             
         }
-        
-        
     }
 
 }
