@@ -46,13 +46,15 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//            let object = fetchedResultsController.object(at: indexPath)
-//                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-//                controller.detailItem = object
-//                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-//                controller.navigationItem.leftItemsSupplementBackButton = true
-//            }
+            if let indexPath = tableView.indexPathForSelectedRow {
+            //let object = fetchedResultsController.object(at: indexPath)
+                let object = (existingAppAction.object(at:indexPath.row) as! rowDataStruct).appName
+                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                controller.detailItem = object
+                controller.detailItemIndex = indexPath.row
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
         }
     }
 
@@ -86,7 +88,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if ptManager.isConnected {
-            ptManager.sendObject(object: (existingAppAction.object(at: indexPath.row) as! rowDataStruct).appName, type: PTType.number.rawValue)
+            //ptManager.sendObject(object: (existingAppAction.object(at: indexPath.row) as! rowDataStruct).appName, type: PTType.number.rawValue)
+            ptManager.sendObject(object: indexPath.row, type: PTType.number.rawValue)
         }
     }
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -205,18 +208,17 @@ extension MasterViewController: PTManagerDelegate {
 //
 //
 //        }
-        var rds = rowDataStruct.init(appName: "new", icon: UIImage.init())
+        //var rds = rowDataStruct.init(appName: "new", icon: UIImage.init())
         
         if type == PTType.rowDataStruct.rawValue {
-            rds = rowDataStruct(data:data)!
-            
+            let rds = rowDataStruct(data:data)!
+            existingAppAction.add(rds)
+            self.tableView.reloadData()
         }
         
 //        existingAppAction.add(rowDataStruct.init(appName: count, icon: UIImage(data:data)!))
 //        existingAppAction.add(rowDataStruct.init(appName: rds.appName, icon: UIImage.init()))
-        existingAppAction.add(rds)
-        self.tableView.reloadData()
-    
+        
     }
     
     func peertalk(didChangeConnection connected: Bool) {

@@ -20,10 +20,15 @@ class ViewController: NSViewController {
     
     // MARK: - Properties
     let ptManager = PTManager.instance
+    var mainTableDefault = 0
+    var subTableDefault = 0
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mainTableDefault = mainTableview.selectedRow
+        subTableDefault = subTableview.selectedRow
         // Setup the PTManager
         ptManager.delegate = self
         ptManager.connect(portNumber: PORT_NUMBER)
@@ -56,17 +61,19 @@ class ViewController: NSViewController {
         
     }
     @IBAction func deleteItemFromList(_ sender: Any) {
-        let indexOfDelete = mainTableview.selectedRow
-        let objectShouldDelete:rowDataStruct = (existingAppAction[indexOfDelete] as! NSArray)[0] as! rowDataStruct
-        
-        CoreDataManager.shared.deleteAutoActionList(appName: objectShouldDelete.appName) { (onSuccess) in
-            print("deleted = \(onSuccess)")
+        if mainTableview.selectedRow>=0 {
+            let indexOfDelete = mainTableview.selectedRow
+            let objectShouldDelete:rowDataStruct = (existingAppAction[indexOfDelete] as! NSArray)[0] as! rowDataStruct
+            
+            CoreDataManager.shared.deleteAutoActionList(appName: objectShouldDelete.appName, subRow: 0) { (onSuccess) in
+                print("deleted = \(onSuccess)")
+            }
+            
+            existingAppAction.removeObject(at: indexOfDelete)
+            existingApps.removeObject(at: indexOfDelete)
+            mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
+            //mainTableview.reloadData()
         }
-        
-        existingAppAction.removeObject(at: indexOfDelete)
-        existingApps.removeObject(at: indexOfDelete)
-        mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
-        //mainTableview.reloadData()
     }
     @IBAction func addNewAction(_ sender: Any) {
         let item = (existingAppAction[mainTableview.selectedRow] as! NSArray)[0] as! rowDataStruct
@@ -75,10 +82,21 @@ class ViewController: NSViewController {
     }
     @IBAction func removeSeletctedAction(_ sender: Any) {
         
-        
-        
-        
-        
+        if subTableview.selectedRow>=0 {
+            let indexOfDelete = mainTableview.selectedRow
+            let objectShouldDelete:rowDataStruct = (existingAppAction[indexOfDelete] as! NSArray)[0] as! rowDataStruct
+            
+            CoreDataManager.shared.deleteAutoActionList(appName: objectShouldDelete.appName, subRow: subTableview.selectedRow) { (onSuccess) in
+                print("deleted = \(onSuccess)")
+            }
+            ((existingAppAction[mainTableview.selectedRow] as! NSArray)[1] as! NSMutableArray).removeObject(at: subTableview.selectedRow)
+            subTableview.removeRows(at: subTableview.selectedRowIndexes, withAnimation: .effectFade)
+            if subTableview.numberOfRows == 0{
+                existingAppAction.removeObject(at: indexOfDelete)
+                existingApps.removeObject(at: indexOfDelete)
+                mainTableview.removeRows(at: mainTableview.selectedRowIndexes, withAnimation: .effectFade)
+            }
+        }
     }
     func reloadDataCheckRunning(){
         runningAppList = NSMutableArray.init()
@@ -271,7 +289,26 @@ extension ViewController: NSTableViewDataSource, NSTableViewDelegate{
 //            detailExistingAppAction.add(stuff.actionName!)
 //        }
         
-        subTableview.reloadData()
+        if mainTableview.selectedRow != mainTableDefault{
+            subTableview.reloadData()
+            mainTableDefault = mainTableview.selectedRow
+        }
+        //subTableview.reloadData()
+        
+        if subTableview.selectedRow != subTableDefault && subTableview.selectedRow>=0{
+            let prt = (((existingAppAction[mainTableview.selectedRow] as! NSArray)[1] as! NSMutableArray)[subTableview.selectedRow] as! NSArray)[1] as! String
+            print(prt)
+//            runScriptFromFile(scriptPath: prt)
+            subTableDefault = subTableview.selectedRow
+        }
+        
+        
+    }
+    func runScriptFromFile(scriptPath:String) -> Void {
+        let scriptURL = NSURL.init(fileURLWithPath: scriptPath)
+        let script = NSAppleScript.init(contentsOf: scriptURL as URL, error: nil)
+        script?.executeAndReturnError(nil)
+        
     }
     
 }
@@ -282,9 +319,22 @@ extension ViewController: PTManagerDelegate {
     }
     
     func peertalk(didReceiveData data: Data, ofType type: UInt32) {
+        if type == PTType.number.rawValue {
+            let count = data.convert() as! Int
+            //runScript(appName: count)
+//            let prt = (((existingAppAction[count] as! NSArray)[1] as! NSMutableArray)[0] as! NSArray)[1] as! String
+//            runScriptFromFile(scriptPath: prt)
+            for subAction in (existingAppAction[count] as! NSArray)[1] as! NSMutableArray{
+                ptManager.sendObject(object: (subAction as! NSArray)[0] as! String, type: PTType.string.rawValue)
+            }
+            ptManager.sendObject(object: 0, type: PTType.number.rawValue)
+            
+        }
+        
         if type == PTType.string.rawValue {
-            let count = data.convert() as! String
-            runScript(appName: count)
+            let mainIndex = Int((data.convert() as! String).split(separator: "^")[0])
+            let subIndex = Int((data.convert() as! String).split(separator: "^")[1])
+            runScriptFromFile(scriptPath: (((existingAppAction[mainIndex!] as! NSArray)[1] as! NSMutableArray)[subIndex!] as! NSArray)[1] as! String)
         }
     }
     
@@ -297,7 +347,7 @@ extension ViewController: PTManagerDelegate {
 //                let submenuitem = NSMenuItem.init(title: title.appName, action: #selector(addNewAppItem), keyEquivalent: "")
 //                submenuitem.image = title.icon
 //                newItemsMeum.addItem(submenuitem)
-                ptManager.sendData(data: (subItem as! rowDataStruct).encode(), type: PTType.rowDataStruct.rawValue)
+                ptManager.sendData(data: ((subItem as! NSArray)[0] as! rowDataStruct).encode(), type: PTType.rowDataStruct.rawValue)
             }
         }
         

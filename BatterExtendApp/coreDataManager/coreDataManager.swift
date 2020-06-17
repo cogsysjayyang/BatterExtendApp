@@ -56,13 +56,13 @@ class CoreDataManager {
         }
     }
     
-    func deleteAutoActionList(appName: String, onSuccess: @escaping ((Bool) -> Void)) {
+    func deleteAutoActionList(appName: String, subRow: Int, onSuccess: @escaping ((Bool) -> Void)) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = filteredRequest(appName: appName)
         
         do {
             if let results: [AutoActionList] = try context?.fetch(fetchRequest) as? [AutoActionList] {
                 if results.count != 0 {
-                    context?.delete(results[0])
+                    context?.delete(results[subRow])
                 }
             }
         } catch let error as NSError {
